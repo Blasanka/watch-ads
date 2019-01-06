@@ -21,10 +21,10 @@ class _AdCardState extends State<AdCard> {
     setState(() {
       _ad = widget.ad;
       //if values are not null only we need to show them
-      _imageUrl = (_ad['imageUrl'] != null) ? _ad['imageUrl'] : 'https://uae.microless.com/cdn/no_image.jpg';
-      _title = (_ad['title'] != null) ? _ad['title'] : '';
-      _price = (_ad['price'] != null) ? _ad['price'] : '';
-      _location = (_ad['location'] != null) ? _ad['location'] : '';
+      _imageUrl = (_ad['imageUrl'] != "") ? _ad['imageUrl'] : 'https://uae.microless.com/cdn/no_image.jpg';
+      _title = (_ad['title'] != "") ? _ad['title'] : '';
+      _price = (_ad['price'] != "") ? _ad['price'] : '';
+      _location = (_ad['location'] != "") ? _ad['location'] : '';
     });
 
     super.initState();
