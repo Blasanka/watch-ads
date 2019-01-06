@@ -1,0 +1,62 @@
+[
+    {
+        "title": "Get christmas T-shirts for fixed prices",
+        "price": "20",
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81aF3Ob-2KL._UX679_.jpg",
+        "location": "Miami"
+    },
+    {
+        "title": "Apple Iphone for sale",
+        "price": "200",
+        "imageUrl": "https://www.boostmobile.com/content/dam/boostmobile/en/products/phones/apple/iphone-7/silver/device-front.png.transform/pdpCarousel/image.jpg",
+        "location": "Colombo"
+    },
+    {
+        "title": "Land for sale",
+        "price": "500000",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgUgs8_kmuhScsx-J01d8fA1mhlCR5-1jyvMYxqCB8h3LCqcgl9Q",
+        "location": "Mumbai"
+    },
+    {
+        "title": "Samsung Galaxy S2 (Used)",
+        "price": "15000",
+        "imageUrl": "https://ae01.alicdn.com/kf/HTB11tA5aiAKL1JjSZFoq6ygCFXaw/Unlocked-Samsung-GALAXY-S2-I9100-Mobile-Phone-Android-Wi-Fi-GPS-8-0MP-camera-Core-4.jpg_640x640.jpg",
+        "location": "Colombo 6"
+    },
+    {
+        "title": "2019 GMC Sierra 3500HD for sale",
+        "price": "49806",
+        "imageUrl": "",
+        "location": "Bowie, TX"
+    },
+    {
+        "title": "2019 GMC Sierra 3500HD",
+        "price": "54300",
+        "imageUrl": "https://media.ed.edmunds-media.com/gmc/sierra-3500hd/2018/td/2018_gmc_sierra-3500hd_f34_td_411183_1600.jpg",
+        "location": "Yatiyana"
+    },
+    {
+        "title": "2019 Chevrolet Silverado 2500HD for sale in Bowie, TX",
+        "price": "43105",
+        "imageUrl": "https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/images/16q1/665019/2016-chevrolet-silverado-2500hd-high-country-diesel-test-review-car-and-driver-photo-665520-s-original.jpg",
+        "location": "Matara"
+    },
+    {
+        "title": "Dodge Grand Caravan SE",
+        "price": "20219",
+        "imageUrl": "https://www.galeanasvandykedodge.net/assets/stock/ColorMatched_01/White/640/cc_2018DOV170002_01_640/cc_2018DOV170002_01_640_PSC.jpg",
+        "location": "New York City"
+    },
+    {
+        "title": "2 bedroom terraced house for sale",
+        "price": "275000",
+        "imageUrl": "https://media.onthemarket.com/properties/6191869/797156548/composite.jpg",
+        "location": "Markham Crescent, Dunstable"
+    },
+    {
+        "title": "3 bedroom semi-detached house for sale",
+        "price": "325000",
+        "imageUrl": "https://media.onthemarket.com/properties/6191840/797152761/composite.jpg",
+        "location": "Jerounds, Harlow"
+    }
+]
