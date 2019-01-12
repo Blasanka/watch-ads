@@ -58,5 +58,9 @@
         "price": "325000",
         "imageUrl": "https://media.onthemarket.com/properties/6191840/797152761/composite.jpg",
         "location": "Jerounds, Harlow"
+    },
+    {
+        "title": "KDH for rent",
+        "location": "New York City"
     }
 ]

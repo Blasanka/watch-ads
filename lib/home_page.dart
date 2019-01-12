@@ -42,8 +42,8 @@ class HomePage extends StatelessWidget {
               );
             } else {
               return Center(
-                  child:
-                      new CircularProgressIndicator()); // If there are no data show this
+                child: new CircularProgressIndicator(),
+              ); // If there are no data show this
             }
           }),
     );

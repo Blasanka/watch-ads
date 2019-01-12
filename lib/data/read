@@ -1,0 +1,8 @@
+This file is here, if you confused, what the hack I am doing:
+
+ads.json file is in the same project to place on my github pages(somewhere on the internet if you want to)
+and to show you guys how to fetch data from the internet. Otherwise, we can use this file with Flutter asset
+bundle without fetching using http.
+
+
+Regards!

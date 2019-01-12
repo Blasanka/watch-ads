@@ -1,51 +1,78 @@
 import 'package:flutter/material.dart';
+import 'package:so_test/model/Ad.dart';
 
 //This is actually not need to be a StatefulWidget but in case, I have it
 class AdCard extends StatefulWidget {
   AdCard(this.ad);
 
-  final ad;
+  // getting an ad from the grid view through contructor
+  final Ad ad;
 
   _AdCardState createState() => _AdCardState();
 }
 
 class _AdCardState extends State<AdCard> {
   //to keep things readable
-  var _ad;
-  String _imageUrl;
-  String _title;
-  String _price;
-  String _location;
+  Ad _ad;
 
-  void initState() { 
+  void initState() {
     setState(() {
       _ad = widget.ad;
-      //if values are not null only we need to show them
-      _imageUrl = (_ad['imageUrl'] != "") ? _ad['imageUrl'] : 'https://uae.microless.com/cdn/no_image.jpg';
-      _title = (_ad['title'] != "") ? _ad['title'] : '';
-      _price = (_ad['price'] != "") ? _ad['price'] : '';
-      _location = (_ad['location'] != "") ? _ad['location'] : '';
     });
 
     super.initState();
   }
 
+  //if there are no title we dont need to show empty space on the card.
+  Widget getTitleWidget() => Padding(
+        padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 4.0),
+        child: (_ad.title != '') ? Text(_ad.title, style: TextStyle(fontWeight: FontWeight.w500)) : SizedBox(),
+      );
+
+  //Same as above reason, if no price
+  Widget getPriceWidget() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 2.0, horizontal: 4.0),
+      child: (_ad.price != '') ? Text('\$ ${_ad.price}') : SizedBox(),
+    );
+  }
+
+  //Same as above reason, if no location
+  Widget getLocationWidget() {
+    return (_ad.location != '')
+        ? Padding(
+            padding: const EdgeInsets.symmetric(vertical: 2.0, horizontal: 4.0),
+            child: Row(
+              children: <Widget>[
+                Icon(Icons.location_on, size: 14.0,),
+                SizedBox(
+                  width: 3.0,
+                ),
+                Expanded(//Expanded to wrap up the text in Row widge, to avoid text overflowing in small devices.
+                  child: Text(_ad.location),
+                )
+              ],
+            ),
+          )
+        : SizedBox();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
-        semanticContainer: false,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(4.0)),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Image.network(_imageUrl),
-            Text(_title),
-            Text('\$ $_price'),
-            Text(_location),
-          ],
-        ),
+      semanticContainer: false,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(4.0)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Image.network(_ad.imageUrl),//If image in your server or API or anywhere is empty, we have a default image in our Ad model
+          getTitleWidget(),
+          getPriceWidget(),
+          getLocationWidget()
+        ],
+      ),
     );
   }
 }
