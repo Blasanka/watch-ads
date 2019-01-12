@@ -23,10 +23,17 @@ class _AdCardState extends State<AdCard> {
     super.initState();
   }
 
+  //if json file contains imageUrl propery but empty value, still we have to provide a image url to Image.network
+  Widget getImagewidget() => (_ad.imageUrl == '')
+      ? Image.network('https://uae.microless.com/cdn/no_image.jpg')
+      : Image.network(_ad.imageUrl);
+
   //if there are no title we dont need to show empty space on the card.
   Widget getTitleWidget() => Padding(
         padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 4.0),
-        child: (_ad.title != '') ? Text(_ad.title, style: TextStyle(fontWeight: FontWeight.w500)) : SizedBox(),
+        child: (_ad.title != '')
+            ? Text(_ad.title, style: TextStyle(fontWeight: FontWeight.w500))
+            : SizedBox(),
       );
 
   //Same as above reason, if no price
@@ -44,11 +51,15 @@ class _AdCardState extends State<AdCard> {
             padding: const EdgeInsets.symmetric(vertical: 2.0, horizontal: 4.0),
             child: Row(
               children: <Widget>[
-                Icon(Icons.location_on, size: 14.0,),
+                Icon(
+                  Icons.location_on,
+                  size: 14.0,
+                ),
                 SizedBox(
                   width: 3.0,
                 ),
-                Expanded(//Expanded to wrap up the text in Row widge, to avoid text overflowing in small devices.
+                Expanded(
+                  //Expanded to wrap up the text in Row widge, to avoid text overflowing in small devices.
                   child: Text(_ad.location),
                 )
               ],
@@ -67,7 +78,7 @@ class _AdCardState extends State<AdCard> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Image.network(_ad.imageUrl),//If image in your server or API or anywhere is empty, we have a default image in our Ad model
+          getImagewidget(),
           getTitleWidget(),
           getPriceWidget(),
           getLocationWidget()
