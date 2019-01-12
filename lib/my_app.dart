@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart';
+import 'package:so_test/screens/home_page.dart';
 
 //boilerplate that you use everywhere
 class MyApp extends StatelessWidget {
