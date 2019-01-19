@@ -17,12 +17,14 @@ class HomePage extends StatelessWidget {
       body: FutureBuilder<List>(
           future: fetchAds(),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
+            if (snapshot.hasError)
+              return Center(child: Text("Ops! something went wrong."));
             if (snapshot.hasData) {
-              return AdsGrid(snapshot.data);//ads grid is a widget in widgets directory
+              //ads grid is a widget in widgets directory
+              return AdsGrid(snapshot.data);
             } else {
-              return Center(
-                child: CircularProgressIndicator(),
-              ); // If there are no data show this
+              // If there are no data show this
+              return Center(child: CircularProgressIndicator());
             }
           }),
     );
